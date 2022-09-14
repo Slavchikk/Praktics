@@ -16,13 +16,15 @@ public class MainActivity extends AppCompatActivity {
 
     Connection connection;
     String ConnectionResult = "";
+
     @Override
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         Button btnGoToSetWindow = (Button) findViewById(R.id.btnGoToSetWindow);
-        Button displayData = (Button) findViewById(R.id.displayDate);
+
+
 
         View.OnClickListener clckGoToSetWindow = new View.OnClickListener() {
             @Override
@@ -35,18 +37,14 @@ public class MainActivity extends AppCompatActivity {
 
 
         btnGoToSetWindow.setOnClickListener(clckGoToSetWindow);
-        View.OnClickListener clckDisplay = new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                GetTextFrommSql();
-            }
-        };
-        displayData.setOnClickListener(clckDisplay);
+
+
+
 
 
     }
 
-    public void GetTextFrommSql()
+    public void GetTextFrommSql(View v)
     {
 
         TextView ID = findViewById(R.id.txtID);
@@ -88,5 +86,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
 
 }
